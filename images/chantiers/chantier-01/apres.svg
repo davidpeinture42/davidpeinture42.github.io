@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" role="img" aria-label="Photo apres travaux a venir">
+  <rect width="800" height="600" fill="#E8E8E8"/>
+  <rect x="1" y="1" width="798" height="598" fill="none" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="400" y="290" font-family="system-ui, sans-serif" font-size="28" fill="#1B2A4A" text-anchor="middle">Photo a venir</text>
+  <text x="400" y="330" font-family="system-ui, sans-serif" font-size="22" fill="#1B2A4A" text-anchor="middle">APRES &#8212; Chantier 01</text>
+</svg>

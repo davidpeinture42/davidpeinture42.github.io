@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img" aria-label="Photo de presentation a venir">
+  <rect width="1200" height="800" fill="#E8E8E8"/>
+  <rect x="1" y="1" width="1198" height="798" fill="none" stroke="#1B2A4A" stroke-width="2"/>
+  <text x="600" y="390" font-family="system-ui, sans-serif" font-size="32" fill="#1B2A4A" text-anchor="middle">Photo a venir</text>
+  <text x="600" y="436" font-family="system-ui, sans-serif" font-size="24" fill="#1B2A4A" text-anchor="middle">David NEYRON &#8212; Platrier Peintre</text>
+</svg>

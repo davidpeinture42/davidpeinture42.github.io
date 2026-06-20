@@ -1,0 +1,378 @@
+:root {
+  --color-bg: #FFFFFF;
+  --color-main: #1B2A4A;
+  --color-accent: #C9A84C;
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --maxWidth: 72rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  color: var(--color-main);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-main);
+  text-decoration: underline;
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--color-main);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background-color: var(--color-bg);
+  color: var(--color-main);
+  padding: var(--space-xs) var(--space-sm);
+  z-index: 10;
+}
+
+.skip-link:focus {
+  left: var(--space-sm);
+  top: var(--space-sm);
+}
+
+.wrapper {
+  max-width: var(--maxWidth);
+  margin-inline: auto;
+  padding-inline: var(--space-md);
+}
+
+.siteHeader {
+  border-bottom: 1px solid var(--color-main);
+  padding-block: var(--space-sm);
+}
+
+.siteHeader__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.siteHeader__brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-main);
+}
+
+.siteNav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+}
+
+.siteNav__link {
+  text-decoration: none;
+  color: var(--color-main);
+  font-weight: 600;
+}
+
+.siteNav__link:hover,
+.siteNav__link:focus-visible {
+  color: var(--color-accent);
+}
+
+.siteNav__link[aria-current="page"] {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-decoration-thickness: 3px;
+}
+
+main {
+  display: block;
+}
+
+.hero {
+  padding-block: var(--space-xl) var(--space-lg);
+}
+
+.hero__title {
+  font-size: 1.75rem;
+  line-height: 1.25;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.hero__lead {
+  font-size: 1.125rem;
+  margin: 0 0 var(--space-md) 0;
+  max-width: 38rem;
+}
+
+.hero__media {
+  margin-top: var(--space-lg);
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-main);
+  text-decoration: none;
+  font-weight: 700;
+  padding: var(--space-sm) var(--space-md);
+  border: 2px solid var(--color-main);
+  border-radius: 0;
+}
+
+.btn:hover {
+  background-color: var(--color-main);
+  color: var(--color-bg);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--color-main);
+  outline-offset: 3px;
+}
+
+.section {
+  padding-block: var(--space-xl);
+  border-top: 1px solid var(--color-main);
+}
+
+.section__title {
+  font-size: 1.5rem;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.valueList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.valueList__item {
+  padding-left: var(--space-md);
+  border-left: 3px solid var(--color-accent);
+}
+
+.valueList__term {
+  display: block;
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+.testimonialList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.testimonial {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-md);
+}
+
+.testimonial__quote {
+  margin: 0 0 var(--space-xs) 0;
+  font-size: 1.0625rem;
+}
+
+.testimonial__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-sm);
+  font-size: 0.9375rem;
+}
+
+.testimonial__author {
+  font-weight: 700;
+}
+
+.testimonial__rating {
+  color: var(--color-main);
+}
+
+.cardList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.card {
+  border: 1px solid var(--color-main);
+  padding: var(--space-md);
+}
+
+.card__title {
+  font-size: 1.25rem;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+.card__location {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.card__compare {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.card__figure {
+  margin: 0;
+}
+
+.card__figcaption {
+  margin-top: var(--space-xs);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.card__description {
+  margin: 0;
+}
+
+.zoneList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.zoneList__item {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-md);
+}
+
+.zoneList__name {
+  font-weight: 700;
+  margin: 0 0 var(--space-xs) 0;
+}
+
+.legal__section {
+  margin-bottom: var(--space-lg);
+}
+
+.legal__sectionTitle {
+  font-size: 1.125rem;
+}
+
+.contactList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contactList__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.contactList__label {
+  font-weight: 700;
+}
+
+.siteFooter {
+  border-top: 1px solid var(--color-main);
+  padding-block: var(--space-lg);
+  background-color: var(--color-main);
+  color: var(--color-bg);
+}
+
+.siteFooter a {
+  color: var(--color-bg);
+}
+
+.siteFooter a:hover,
+.siteFooter a:focus-visible {
+  color: var(--color-accent);
+}
+
+.siteFooter__nap {
+  margin: 0 0 var(--space-md) 0;
+  font-style: normal;
+}
+
+.siteFooter__nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-md);
+}
+
+@media (min-width: 48rem) {
+  .siteHeader__inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__lead {
+    font-size: 1.25rem;
+  }
+
+  .card__compare {
+    flex-direction: row;
+  }
+
+  .card__figure {
+    flex: 1;
+  }
+
+  .valueList,
+  .testimonialList {
+    flex-direction: row;
+  }
+
+  .valueList__item,
+  .testimonial {
+    flex: 1;
+  }
+}
