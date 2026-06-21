@@ -9,6 +9,7 @@ MVP V1 : HTML + CSS uniquement, zéro JS, zéro dépendance externe, zéro build
 ```
 /
 ├── index.html
+├── prestations.html
 ├── interventions.html
 ├── contact.html
 ├── mentions-legales.html
@@ -49,6 +50,7 @@ Ce template est la structure de référence pour `interventions.html`. La duplic
   4. Adapter le titre, la localisation, les alt et la description
 -->
 <li class="card">
+  <p class="eyebrow eyebrow--onLight">Chantier</p>
   <h2 class="card__title">Titre du chantier <span class="card__location">— Commune (42)</span></h2>
   <div class="card__compare">
     <figure class="card__figure">
@@ -76,6 +78,7 @@ Pendant la phase placeholder (SVG), le même bloc s'écrit sans `<picture>` mult
 
 ```html
 <li class="card">
+  <p class="eyebrow eyebrow--onLight">Chantier</p>
   <h2 class="card__title">Titre du chantier <span class="card__location">— Commune (42)</span></h2>
   <div class="card__compare">
     <figure class="card__figure">
@@ -99,7 +102,9 @@ Pendant la phase placeholder (SVG), le même bloc s'écrit sans `<picture>` mult
 - Un seul fichier CSS global : `css/style.css`
 - Zéro commentaire dans le HTML/CSS livré (le code se lit seul) ; les commentaires du template ci-dessus sont une exception documentaire propre au README
 
-## Palette et contraste (à respecter en cas d'ajout de styles)
+## Système de design (refonte V1.1)
+
+Trois couleurs brutes seulement, toujours en custom properties :
 
 ```css
 --color-bg: #FFFFFF;
@@ -107,16 +112,49 @@ Pendant la phase placeholder (SVG), le même bloc s'écrit sans `<picture>` mult
 --color-accent: #C9A84C;
 ```
 
-L'accent `#C9A84C` sur fond blanc donne un ratio de contraste d'environ **2,3:1**, sous le seuil WCAG AA (4,5:1 pour le texte, 3:1 pour les éléments non-textuels comme un focus ring). Il est donc réservé :
+Tous les autres tokens sont **dérivés** de ces trois couleurs via `color-mix()`, pas des couleurs supplémentaires ajoutées à la main :
 
-- aux fonds de bouton, toujours avec du texte `--color-main` dessus (ratio ≈ 6,2:1, conforme AA)
-- aux éléments décoratifs non porteurs de sens (bordures, puces)
+```css
+--color-surface: color-mix(in srgb, var(--color-main) 5%, white);  /* fonds de bandeaux et de cartes */
+--color-border: color-mix(in srgb, var(--color-main) 18%, white);  /* bordures fines des cartes */
+--color-muted: color-mix(in srgb, var(--color-main) 65%, white);   /* texte secondaire sur fond clair, ≈4,6:1 */
+```
 
-Le texte de lien reste en `--color-main` (souligné), jamais en `--color-accent` seul sur fond blanc.
+`color-mix()` est supporté par toutes les versions actuelles de Chrome, Firefox, Safari et Edge depuis 2023 — sans risque vu la cible "2 dernières versions, pas d'IE11".
+
+### Règle de contraste sur l'accent
+
+`#C9A84C` sur blanc ≈ 2,3:1 (sous le seuil AA). `#C9A84C` sur `--color-main` ≈ 6,2:1 (conforme). Donc :
+
+- l'accent sert de **texte** uniquement sur fond `--color-main` (bandeaux héro/footer, classe `.eyebrow`)
+- sur fond clair, le texte de mise en avant utilise `.eyebrow--onLight` (`--color-muted`, ≈4,6:1) au lieu de l'accent
+- l'accent reste le fond des `.btn` (texte `--color-main` dessus, ≈6,2:1)
+
+### Pattern de bandeaux pleine largeur
+
+Le héro et le footer sont les seuls éléments toujours en pleine largeur colorée (`--color-main`). Les sections de contenu alternent :
+
+- sections "plates" : une seule balise porte `class="section wrapper"` (fond = fond de page, pas de structure supplémentaire)
+- sections "teintées" : structure en deux niveaux, `<section class="section section--tint">` (pleine largeur, fond `--color-surface`) contenant un `<div class="wrapper">` qui recentre le contenu
+
+### Cartes (`.tile`)
+
+`valueList__item`, `testimonial`, `zoneList__item` et `contactList__item` partagent désormais le même habillage visuel via la classe utilitaire `.tile` (fond `--color-surface`, bordure `--color-border`, `--radius-lg`), combinée à leur classe BEM spécifique pour le contenu. La galerie de chantiers (`.card`) suit la même logique visuelle mais garde ses propres règles, son contenu (paire avant/après) étant structurellement différent.
+
+
 
 ## Mise à jour de l'hébergement
 
 GitHub Pages sert le contenu de la branche `main` à la racine. Aucune étape de build n'est nécessaire : chaque fichier de ce dépôt est déposé tel quel.
+
+## À compléter avant mise en ligne réelle
+
+`mentions-legales.html` contient deux sections avec des champs `[À COMPLÉTER]`, obligatoires pour un artisan du bâtiment et non inventables par un tiers :
+
+- **Assurance professionnelle** — nom et adresse de l'assureur (RC pro / garantie décennale), zone de couverture géographique. Obligation légale : article L. 243-2 du Code des assurances.
+- **Médiation de la consommation** — nom et coordonnées du médiateur de la consommation désigné. Obligation légale : articles L. 612-1 et suivants du Code de la consommation. Si aucun médiateur n'est encore désigné, David NEYRON doit s'affilier à un médiateur agréé (liste sur le site de la Commission d'évaluation et de contrôle de la médiation de la consommation, CECMC) avant publication.
+
+Tant que ces champs ne sont pas remplis avec les vraies informations, le site ne doit pas être considéré comme conforme pour une mise en ligne publique définitive.
 
 ## V2 (hors scope du MVP)
 

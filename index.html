@@ -50,7 +50,8 @@
   ],
   "sameAs": [
     "https://www.allovoisins.com/p/neyrondavid",
-    "https://www.facebook.com/david.peinture.616060"
+    "https://www.facebook.com/david.peinture.616060",
+    "https://www.linkedin.com/in/david-neyron-6ab323172/"
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -85,6 +86,7 @@
     <nav aria-label="Navigation principale">
       <ul class="siteNav__list">
         <li><a class="siteNav__link" href="index.html" aria-current="page">Accueil</a></li>
+        <li><a class="siteNav__link" href="prestations.html">Prestations</a></li>
         <li><a class="siteNav__link" href="interventions.html">Réalisations</a></li>
         <li><a class="siteNav__link" href="zones.html">Zone d'intervention</a></li>
         <li><a class="siteNav__link" href="contact.html">Contact</a></li>
@@ -94,39 +96,47 @@
   </div>
 </header>
 <main id="main">
-  <section class="hero wrapper">
-    <h1 class="hero__title">Plâtrier peintre à Saint-Étienne et dans la Loire (42)</h1>
-    <p class="hero__lead">David NEYRON, artisan indépendant basé à Firminy, intervient sur Saint-Étienne et tout le bassin stéphanois pour vos travaux de plâtrerie et de peinture intérieure. Conseil, service, qualité — devis gratuit.</p>
-    <a class="btn" href="contact.html">Demander un devis gratuit</a>
-    <div class="hero__media">
-      <picture>
-        <img src="images/hero.svg" alt="David NEYRON, plâtrier peintre, sur un chantier de rénovation à Firminy" width="1200" height="800" loading="eager" fetchpriority="high">
-      </picture>
+  <section class="hero hero--withMedia">
+    <div class="wrapper hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow">Plâtrier peintre — Loire (42)</p>
+        <h1 class="hero__title">Plâtrier peintre à Saint-Étienne et dans la Loire (42)</h1>
+        <p class="hero__lead">David NEYRON, artisan indépendant basé à Firminy, intervient sur Saint-Étienne et tout le bassin stéphanois pour vos travaux de plâtrerie et de peinture intérieure. Conseil, service, qualité — devis gratuit.</p>
+        <a class="btn" href="contact.html">Demander un devis gratuit</a>
+      </div>
+      <div class="hero__media">
+        <picture>
+          <img src="images/hero.svg" alt="David NEYRON, plâtrier peintre, sur un chantier de rénovation à Firminy" width="1200" height="800" loading="eager" fetchpriority="high">
+        </picture>
+      </div>
     </div>
   </section>
 
-  <section class="section wrapper" aria-labelledby="atouts-title">
-    <h2 class="section__title" id="atouts-title">Pourquoi choisir David NEYRON</h2>
-    <ul class="valueList">
-      <li class="valueList__item">
-        <span class="valueList__term">Conseil</span>
-        Un diagnostic clair de vos travaux de plâtrerie et de peinture, avec des recommandations adaptées à votre logement.
-      </li>
-      <li class="valueList__item">
-        <span class="valueList__term">Service</span>
-        Auto-entrepreneur indépendant depuis mars 2021, disponible et réactif sur Saint-Étienne et le bassin stéphanois.
-      </li>
-      <li class="valueList__item">
-        <span class="valueList__term">Qualité</span>
-        Un travail soigné, du ravalement de façade à la peinture intérieure, réalisé par un seul artisan du début à la fin.
-      </li>
-    </ul>
+  <section class="section section--tint" aria-labelledby="atouts-title">
+    <div class="wrapper">
+      <h2 class="section__title" id="atouts-title">Pourquoi choisir David NEYRON</h2>
+      <ul class="valueList">
+        <li class="tile valueList__item">
+          <span class="valueList__term">Conseil</span>
+          Un diagnostic clair de vos travaux de plâtrerie et de peinture, avec des recommandations adaptées à votre logement.
+        </li>
+        <li class="tile valueList__item">
+          <span class="valueList__term">Murs et sols</span>
+          Peinture, plâtrerie, tapisserie, ponçage et pose de parquet tous types : un seul artisan pour l'ensemble du chantier.
+        </li>
+        <li class="tile valueList__item">
+          <span class="valueList__term">Qualité</span>
+          Un travail soigné, du ravalement de façade à la peinture intérieure, réalisé par un seul artisan du début à la fin.
+        </li>
+      </ul>
+      <p><a href="prestations.html">Voir le détail de toutes les prestations →</a></p>
+    </div>
   </section>
 
   <section class="section wrapper" aria-labelledby="avis-title">
     <h2 class="section__title" id="avis-title">Ce que disent les clients</h2>
     <ul class="testimonialList">
-      <li class="testimonial">
+      <li class="tile testimonial">
         <p class="testimonial__quote">« Échange correct et professionnel. Contact sérieux. »</p>
         <p class="testimonial__meta">
           <span class="testimonial__author">René CARAGUEL</span>
@@ -134,7 +144,7 @@
           <span>13 juin 2026</span>
         </p>
       </li>
-      <li class="testimonial">
+      <li class="tile testimonial">
         <p class="testimonial__quote">« David a été très pro, efficace, rapide en plus d'être très sympathique ! Il m'a donné plein de conseils et aidé à régler d'autres petits soucis autre que dans la cuisine, qui n'étaient pas prévus à la base. Je recommande les yeux fermés ! »</p>
         <p class="testimonial__meta">
           <span class="testimonial__author">Mélissa M.</span>
@@ -145,14 +155,16 @@
     </ul>
   </section>
 
-  <section class="section wrapper" aria-labelledby="cta-title">
-    <h2 class="section__title" id="cta-title">Un projet de plâtrerie ou de peinture ?</h2>
-    <p>Contactez David NEYRON par téléphone ou par mail pour un devis gratuit, sans engagement.</p>
-    <a class="btn" href="contact.html">Voir les coordonnées</a>
+  <section class="section section--tint" aria-labelledby="cta-title">
+    <div class="wrapper">
+      <h2 class="section__title" id="cta-title">Un projet de plâtrerie ou de peinture ?</h2>
+      <p>Contactez David NEYRON par téléphone ou par mail pour un devis gratuit, sans engagement.</p>
+      <a class="btn" href="contact.html">Voir les coordonnées</a>
+    </div>
   </section>
 </main>
 <footer class="siteFooter">
-  <div class="wrapper">
+  <div class="wrapper siteFooter__inner">
     <address class="siteFooter__nap">
       David NEYRON — Plâtrier Peintre<br>
       7 Bis Impasse Berthail Prenat, 42700 Firminy<br>
@@ -160,10 +172,13 @@
       <a href="mailto:DavidPeinture42@gmail.com">DavidPeinture42@gmail.com</a>
     </address>
     <ul class="siteFooter__nav">
+      <li><a href="prestations.html">Prestations</a></li>
+      <li><a href="interventions.html">Réalisations</a></li>
       <li><a href="zones.html">Zones d'intervention</a></li>
-      <li><a href="mentions-legales.html">Mentions légales</a></li>
       <li><a href="https://www.allovoisins.com/p/neyrondavid">AlloVoisins</a></li>
       <li><a href="https://www.facebook.com/david.peinture.616060">Facebook</a></li>
+      <li><a href="https://www.linkedin.com/in/david-neyron-6ab323172/">LinkedIn</a></li>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
     </ul>
   </div>
 </footer>
